@@ -5,7 +5,7 @@ version: 0.0.1
 modules:
  - name: a
    type: html5
-   path: a
+   path: CFO_UC
    parameters:
       disk-quota: 256M
       memory: 256M
