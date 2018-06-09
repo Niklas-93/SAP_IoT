@@ -1,0 +1,172 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "a",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"EventService": {
+				"uri": "/IOTAS-COMPOSITE-EVENTS-ODATA/CompositeEvents/EventType/v1/com.sap.appiot.eventtypes:StandardEventType",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/EventsMetadata/metadata.xml"
+				}
+			},
+			"mainService": {
+				"uri": "/IOTAS-ADVANCEDLIST-THING-ODATA/CompositeThings/v1/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"Thing_Service1": {
+				"uri": "/IOTAS-DETAILS-THING-ODATA/CompositeThings/ThingType/v1/iotae.ibsolutioniot.iotteam2:SmartPlugThingType",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/Thing_Metadata1/metadata.xml"
+				}
+			}
+		},
+		"title": "{{appTitle}}",
+		"resources": "resources.json",
+		"ach": "ach",
+		"sourceTemplate": {
+			"id": "ui.appbuilder.iotappmtatemplatelayout",
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "a.view.Main",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.chart": {
+					"minVersion": ""
+				},
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {},
+				"sap.viz": {
+					"minVersion": ""
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "a.i18n.i18n"
+				}
+			},
+			"events": {
+				"dataSource": "EventService",
+				"preload": true,
+				"settings": {
+					"useBatch": false,
+					"defaultCountMode": "Inline"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"useBatch": false,
+					"defaultCountMode": "Inline",
+					"headers": {
+						"sap-iot-eventtype": "com.sap.appiot.eventtypes:StandardEventType",
+						"sap-iot-pst": "iotae.ibsolutioniot.iotteam2:SmartPlugCapability"
+					}
+				}
+			},
+			"thingModel1": {
+				"dataSource": "Thing_Service1",
+				"preload": true,
+				"settings": {
+					"useBatch": false,
+					"defaultCountMode": "Inline"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "a.view",
+				"controlAggregation": "pages",
+				"controlId": "idAppControl"
+			},
+			"routes": [
+				{
+					"name": "b",
+					"pattern": "b",
+					"target": [
+						"b"
+					]
+				}
+			],
+			"targets": {
+				"Main": {
+					"viewType": "XML",
+					"viewName": "Main",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "a.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl"
+				},
+				"b": {
+					"viewType": "XML",
+					"viewName": "b"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

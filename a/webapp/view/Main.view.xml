@@ -1,0 +1,34 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:iot="sap.ui.iot.controls" xmlns:iotele="sap.ui.iot.elements" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="a.controller.Main" displayBlock="true" viewName="Test" afterInit="action" action:wiring="\{'afterInit':\{'navigation':\{'routeName':'b'\}\}\}">
+	<App id="idAppControl" pages="{path:'/Things',parameters:{expand:'DYN_ENT_com_sap_appiot_eventtypes__StandardEventType,DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapability'}}">
+		<pages><Page title="Cockpit" backgroundDesign="Solid" showFooter="false">
+			<content>
+			    <iot:IoTChart id="__tchart0" assetId="{ThingId}">
+			        <iot:events>
+			            <iotele:IoTEventsOnChartElement businessTimeStamp="" severity="0" eventId="" eventDescription="" eventProperty="" eventStatus="" id="__element1"/>
+			        </iot:events>
+			    </iot:IoTChart>
+			    <iot:IoTThingList things="{path:'/Things',parameters:{expand:'DYN_ENT_com_sap_appiot_eventtypes__StandardEventType'}}" id="__list0" rowSelect="setAssetId">
+			        <iot:columns>
+			            <iotele:IoTThingListColumnHeader text="Thing Id" id="__header0"/>
+			            <iotele:IoTThingListColumnHeader text="Thing Name" id="__header1"/>
+			            <iotele:IoTThingListColumnHeader text="Current" id="__header2"/></iot:columns>
+			        <iot:things>
+			            <iotele:IoTThingListElement thingImage="{ThingId}" highSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/High}" mediumSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Medium}" lowSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Low}" id="__element0">
+			                <iotele:cells>
+			                    <iotele:IoTThingListColumn text="{ThingId}" id="__column0"/>
+			                    <iotele:IoTThingListColumn text="{ThingName}" id="__column1"/>
+			                    <iotele:IoTThingListColumn text="{DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapability/SmartPlugCapability.current}" id="__column2"/></iotele:cells>
+			            </iotele:IoTThingListElement>
+			        </iot:things></iot:IoTThingList>
+			    <sap.ui.layout:HorizontalLayout xmlns:sap.ui.layout="sap.ui.layout" id="__layout0">
+			        <sap.ui.layout:content>
+			            
+			        </sap.ui.layout:content>
+			    </sap.ui.layout:HorizontalLayout>
+				<Button text="Export Data" type="Default" icon="sap-icon://excel-attachment" iconFirst="true" width="100%" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+			<Button text="Create Forecast" type="Emphasized" icon="sap-icon://database" iconFirst="true" width="100%" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+			</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

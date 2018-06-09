@@ -1,0 +1,98 @@
+ID: a
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: a
+   type: html5
+   path: a
+   parameters:
+      disk-quota: 256M
+      memory: 256M
+   build-parameters:
+      builder: grunt
+   requires:
+    - name: IOTAS-ADVANCEDLIST-THING-ODATA
+      group: destinations
+      properties:
+         forwardAuthToken: true
+         strictSSL: false
+         name: IOTAS-ADVANCEDLIST-THING-ODATA
+         url: ~{url}
+    - name: IOTAS-DETAILS-THING-ODATA
+      group: destinations
+      properties:
+         forwardAuthToken: true
+         strictSSL: false
+         name: IOTAS-DETAILS-THING-ODATA
+         url: ~{url}
+    - name: IOTAS-COMPOSITE-EVENTS-ODATA
+      group: destinations
+      properties:
+         forwardAuthToken: true
+         strictSSL: false
+         name: IOTAS-COMPOSITE-EVENTS-ODATA
+         url: ~{url}
+    - name: IOTAS_CONTROLS
+      group: destinations
+      properties:
+         forwardAuthToken: true
+         strictSSL: false
+         name: IOTAS_CONTROLS
+         url: ~{url}
+    - name: IOTAS
+      group: destinations
+      properties:
+         forwardAuthToken: true
+         strictSSL: false
+         name: IOTAS
+         url: ~{url}
+    - name: IOTAS-FILEIMAGE
+      group: destinations
+      properties:
+         forwardAuthToken: true
+         strictSSL: false
+         name: IOTAS-FILEIMAGE
+         url: ~{url}
+    - name: sapui52
+      group: destinations
+      properties:
+         forwardAuthToken: true
+         strictSSL: false
+         name: sapui52
+         url: ~{url}
+
+resources:
+ - name: IOTAS-ADVANCEDLIST-THING-ODATA
+   properties:
+      url: https://advancedlist-thing-sap.cfapps.eu10.hana.ondemand.com
+
+ - name: IOTAS-DETAILS-THING-ODATA
+   properties:
+      url: https://details-thing-sap.cfapps.eu10.hana.ondemand.com
+
+
+ - name: IOTAS-COMPOSITE-EVENTS-ODATA
+   properties:
+      url: https://composite-events-odata.cfapps.eu10.hana.ondemand.com
+
+
+ - name: IOTAS_CONTROLS
+   properties:
+      url: https://sapuiiot.cfapps.eu10.hana.ondemand.com
+
+
+ - name: IOTAS
+   properties:
+      url: https://appiot-mds.cfapps.eu10.hana.ondemand.com
+
+
+ - name: IOTAS-FILEIMAGE
+   properties:
+      url: https://thingmodeler-fileservice.cfapps.eu10.hana.ondemand.com
+
+
+ - name: sapui52
+   properties:
+      url: https://sapui5.hana.ondemand.com
+

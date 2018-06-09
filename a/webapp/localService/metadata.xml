@@ -1,0 +1,195 @@
+<?xml version="1.0" ?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+	<edmx:DataServices m:DataServiceVersion="1.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+		xmlns:sap="http://www.sap.com/Protocols/SAPData">
+		<Schema Namespace="com.sap.appiot" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapability" sap:semantics="timeseries">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String"></Property>
+				<Property Name="SmartPlugCapability.activePower" Type="Edm.Int32"></Property>
+				<Property Name="SmartPlugCapability.activePower.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="SmartPlugCapability.apparentPower" Type="Edm.Int32"></Property>
+				<Property Name="SmartPlugCapability.apparentPower.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="SmartPlugCapability.current" Type="Edm.Decimal"></Property>
+				<Property Name="SmartPlugCapability.current.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="SmartPlugCapability.powerFactor" Type="Edm.Decimal"></Property>
+				<Property Name="SmartPlugCapability.powerFactor.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="SmartPlugCapability.reactivePower" Type="Edm.Int32"></Property>
+				<Property Name="SmartPlugCapability.reactivePower.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="SmartPlugCapability.voltage" Type="Edm.Int32"></Property>
+				<Property Name="SmartPlugCapability.voltage.Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<EntityType Name="DYN_ENT_com_sap_appiot_eventtypes__StandardEventType">
+				<Key>
+					<PropertyRef Name="EventType"></PropertyRef>
+				</Key>
+				<Property Name="EventType" Type="Edm.String"></Property>
+				<Property Name="High" Type="Edm.Int32"></Property>
+				<Property Name="Medium" Type="Edm.Int32"></Property>
+				<Property Name="Low" Type="Edm.Int32"></Property>
+			</EntityType>
+			<EntityType Name="HierarchyElement">
+				<Key>
+					<PropertyRef Name="HierarchyId"></PropertyRef>
+					<PropertyRef Name="RootThingId"></PropertyRef>
+				</Key>
+				<Property Name="HierarchyId" Type="Edm.String"></Property>
+				<Property Name="HierarchyName" Type="Edm.String"></Property>
+				<Property Name="RootThingId" Type="Edm.String"></Property>
+				<Property Name="RootThingName" Type="Edm.String"></Property>
+				<Property Name="RootThingType" Type="Edm.String"></Property>
+				<Property Name="RootThingDescription" Type="Edm.String"></Property>
+				<Property Name="RootThingExternalId" Type="Edm.String"></Property>
+				<Property Name="HierarchyDescription" Type="Edm.String"></Property>
+				<Property Name="HierarchyExternalId" Type="Edm.String"></Property>
+			</EntityType>
+			<EntityType Name="Thing">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String" Nullable="false">
+					<Documentation>
+						<LongDescription>Thing unique ID</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ISOCode" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing Language code</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingDescription" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing description</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingName" Type="Edm.String" Nullable="false">
+					<Documentation>
+						<LongDescription>Thing name</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingExternalId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing external id</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingType" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing Type ID associated with the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ObjectGroup" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Object group used to create the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="BusinessPartnerName" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Business partner name associated for the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="BPLandlinePhoneNumber" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Landline phone number of Business partner</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="BPMobilePhoneNumber" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Mobile phone number of Business partner</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCustomerId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Business partner ID associated for the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingRegionDescription" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Region where Thing is located</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCountryDescription" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Country where the Thing is located</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCountryId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Country code where the Thing is located</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCommunicationData" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing address details</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingLocationId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing location ID</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="Latitude" Type="Edm.Double">
+					<Documentation>
+						<LongDescription>Latitude coordinates</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="Longitude" Type="Edm.Double">
+					<Documentation>
+						<LongDescription>Longitude coordinates</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="AlternateId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing AlternateId</LongDescription>
+					</Documentation>
+				</Property>
+				<NavigationProperty Name="HierarchyElements" Relationship="com.sap.appiot.HierarchyElements" FromRole="ThingEntities"
+					ToRole="HierarchyElementsEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_com_sap_appiot_eventtypes__StandardEventType"
+					Relationship="com.sap.appiot.DYN_ENT_com_sap_appiot_eventtypes__StandardEventType" FromRole="ThingEntities"
+					ToRole="DYN_ENT_com_sap_appiot_eventtypes__StandardEventTypeEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapability"
+					Relationship="com.sap.appiot.DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapability" FromRole="ThingEntities"
+					ToRole="DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapabilityEntities"></NavigationProperty>
+			</EntityType>
+			<Association Name="HierarchyElements">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.HierarchyElement" Multiplicity="*" Role="HierarchyElementsEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_com_sap_appiot_eventtypes__StandardEventType">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_com_sap_appiot_eventtypes__StandardEventType" Multiplicity="1"
+					Role="DYN_ENT_com_sap_appiot_eventtypes__StandardEventTypeEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapability">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapability" Multiplicity="1"
+					Role="DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapabilityEntities"></End>
+			</Association>
+			<EntityContainer Name="CompositeThingsAnalytics" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapabilitys"
+					EntityType="com.sap.appiot.DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapability"></EntitySet>
+				<EntitySet Name="DYN_ENT_com_sap_appiot_eventtypes__StandardEventTypes"
+					EntityType="com.sap.appiot.DYN_ENT_com_sap_appiot_eventtypes__StandardEventType"></EntitySet>
+				<EntitySet Name="HierarchyElements" EntityType="com.sap.appiot.HierarchyElement"></EntitySet>
+				<EntitySet Name="Things" EntityType="com.sap.appiot.Thing"></EntitySet>
+				<AssociationSet Name="HierarchyElements" Association="com.sap.appiot.HierarchyElements">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="HierarchyElements" Role="HierarchyElementsEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_com_sap_appiot_eventtypes__StandardEventType"
+					Association="com.sap.appiot.DYN_ENT_com_sap_appiot_eventtypes__StandardEventType">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_com_sap_appiot_eventtypes__StandardEventTypes" Role="DYN_ENT_com_sap_appiot_eventtypes__StandardEventTypeEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapability"
+					Association="com.sap.appiot.DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapability">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapabilitys"
+						Role="DYN_ENT_iotae_ibsolutioniot_iotteam2__SmartPlugCapabilityEntities"></End>
+				</AssociationSet>
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
