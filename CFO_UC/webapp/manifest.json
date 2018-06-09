@@ -146,6 +146,13 @@
 					"target": [
 						"b"
 					]
+				},
+				{
+					"name": "b_binded",
+					"pattern": "b/{ThingId}",
+					"target": [
+						"b"
+					]
 				}
 			],
 			"targets": {
@@ -161,6 +168,12 @@
 				"b": {
 					"viewType": "XML",
 					"viewName": "b"
+				}
+			},
+			"additionalData": {
+				"a.view.b": {
+					"routeName": "b_binded",
+					"entitySet": "/Things"
 				}
 			}
 		}

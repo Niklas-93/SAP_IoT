@@ -38,7 +38,7 @@
 			            </items>
 			        
 			    </IconTabBar>
-				<Button text="Export Data" type="Default" icon="sap-icon://excel-attachment" iconFirst="true" width="100%" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+				<Button text="Export Data" type="Default" icon="sap-icon://excel-attachment" iconFirst="true" width="100%" enabled="true" visible="true" iconDensityAware="false" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'b_binded','keys':[\{'name':'ThingId','type':'Edm.String'\}]\}\}\}"/>
 			<Button text="Create Forecast" type="Emphasized" icon="sap-icon://database" iconFirst="true" width="100%" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
 			</content>
 			</Page>
